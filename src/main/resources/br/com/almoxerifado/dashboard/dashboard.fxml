@@ -1,6 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import java.lang.String?>
 <?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.Menu?>
 <?import javafx.scene.control.MenuBar?>
@@ -8,9 +10,9 @@
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 <?import org.kordamp.ikonli.javafx.FontIcon?>
-
 
 <BorderPane prefHeight="700.0" prefWidth="1200.0" styleClass="bg_dashboard" stylesheets="@../assets/styles/stylesheet.css" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="CONTROLLER_NAME">
    <top>
@@ -18,7 +20,7 @@
          <children>
             <Label contentDisplay="CENTER" text="ALMOXERIFADO" textFill="WHITE">
                <font>
-                  <Font size="18.0" />
+                  <Font name="System Italic" size="18.0" />
                </font>
                <HBox.margin>
                   <Insets left="20.0" right="20.0" />
@@ -29,7 +31,7 @@
               <menus>
                 <Menu mnemonicParsing="false">
                   <items>
-                    <MenuItem mnemonicParsing="false" text="Close" />
+                    <MenuItem mnemonicParsing="false" text="Menu Item" />
                   </items>
                      <graphic>
                         <FontIcon iconColor="WHITE" iconLiteral="mdi2b-bell" iconSize="28" />
@@ -37,7 +39,8 @@
                 </Menu>
                 <Menu mnemonicParsing="false">
                   <items>
-                    <MenuItem mnemonicParsing="false" text="Delete" />
+                    <MenuItem mnemonicParsing="false" text="Menu Perfil" />
+                        <MenuItem mnemonicParsing="false" text="Alterar Senha" />
                   </items>
                      <graphic>
                         <FontIcon iconColor="WHITE" iconLiteral="mdi2a-account" iconSize="30" />
@@ -48,4 +51,185 @@
          </children>
       </HBox>
    </top>
+   <left>
+      <VBox prefHeight="200.0" prefWidth="250.0" styleClass="container_style" BorderPane.alignment="CENTER">
+         <BorderPane.margin>
+            <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+         </BorderPane.margin>
+         <children>
+            <HBox alignment="CENTER_LEFT" prefHeight="50.0" prefWidth="200.0">
+               <children>
+                  <FontIcon iconColor="WHITE" iconLiteral="mdi2h-home" iconSize="30">
+                     <HBox.margin>
+                        <Insets left="20.0" right="10.0" />
+                     </HBox.margin>
+                  </FontIcon>
+                  <Label text="Dashboard" textFill="WHITE">
+                     <font>
+                        <Font size="20.0" />
+                     </font>
+                     <HBox.margin>
+                        <Insets />
+                     </HBox.margin>
+                  </Label>
+               </children>
+               <styleClass>
+                  <String fx:value="dashboard_menu_item_first" />
+                  <String fx:value="dashboard_menu_item_border" />
+               </styleClass>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </HBox>
+            <HBox alignment="CENTER_LEFT" layoutX="10.0" layoutY="10.0" prefHeight="50.0" prefWidth="200.0">
+               <children>
+                  <FontIcon iconColor="WHITE" iconLiteral="mdi2p-package-variant-closed" iconSize="30">
+                     <HBox.margin>
+                        <Insets left="20.0" right="10.0" />
+                     </HBox.margin>
+                  </FontIcon>
+                  <Label text="Mateiais" textFill="WHITE">
+                     <font>
+                        <Font size="20.0" />
+                     </font>
+                     <HBox.margin>
+                        <Insets left="20.0" right="10.0" />
+                     </HBox.margin>
+                  </Label>
+               </children>
+               <VBox.margin>
+                  <Insets />
+               </VBox.margin>
+               <styleClass>
+                  <String fx:value="dashboard_menu_item_border" />
+                  <String fx:value="dashboard_menu_item" />
+               </styleClass>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </HBox>
+            <HBox alignment="CENTER_LEFT" layoutX="10.0" layoutY="60.0" prefHeight="50.0" prefWidth="200.0">
+               <children>
+                  <FontIcon iconColor="WHITE" iconLiteral="mdi2l-label-multiple" iconSize="30">
+                     <HBox.margin>
+                        <Insets left="20.0" right="10.0" />
+                     </HBox.margin>
+                  </FontIcon>
+                  <Label text="Categoria" textFill="WHITE">
+                     <font>
+                        <Font size="20.0" />
+                     </font>
+                     <HBox.margin>
+                        <Insets left="20.0" right="10.0" />
+                     </HBox.margin>
+                  </Label>
+               </children>
+               <styleClass>
+                  <String fx:value="dashboard_menu_item_border" />
+                  <String fx:value="dashboard_menu_item" />
+               </styleClass>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </HBox>
+            <HBox alignment="CENTER_LEFT" layoutX="10.0" layoutY="110.0" prefHeight="50.0" prefWidth="200.0">
+               <children>
+                  <FontIcon iconColor="WHITE" iconLiteral="mdi2c-clipboard-check-multiple" iconSize="30">
+                     <HBox.margin>
+                        <Insets left="20.0" right="10.0" />
+                     </HBox.margin>
+                  </FontIcon>
+                  <Label text="Pedidos" textFill="WHITE">
+                     <font>
+                        <Font size="20.0" />
+                     </font>
+                     <HBox.margin>
+                        <Insets left="20.0" right="10.0" />
+                     </HBox.margin>
+                  </Label>
+               </children>
+               <styleClass>
+                  <String fx:value="dashboard_menu_item_border" />
+                  <String fx:value="dashboard_menu_item" />
+               </styleClass>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </HBox>
+            <HBox alignment="CENTER_LEFT" layoutX="10.0" layoutY="160.0" prefHeight="50.0" prefWidth="200.0">
+               <children>
+                  <FontIcon iconColor="WHITE" iconLiteral="mdi2a-account-multiple" iconSize="30">
+                     <HBox.margin>
+                        <Insets left="20.0" right="10.0" />
+                     </HBox.margin>
+                  </FontIcon>
+                  <Label text="Usuários" textFill="WHITE">
+                     <font>
+                        <Font size="20.0" />
+                     </font>
+                     <HBox.margin>
+                        <Insets left="20.0" right="10.0" />
+                     </HBox.margin>
+                  </Label>
+               </children>
+               <styleClass>
+                  <String fx:value="dashboard_menu_item_border" />
+                  <String fx:value="dashboard_menu_item" />
+               </styleClass>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </HBox>
+            <HBox alignment="CENTER_LEFT" layoutX="10.0" layoutY="210.0" prefHeight="50.0" prefWidth="200.0">
+               <children>
+                  <FontIcon iconColor="WHITE" iconLiteral="mdi2f-file-document" iconSize="30">
+                     <HBox.margin>
+                        <Insets left="20.0" right="10.0" />
+                     </HBox.margin>
+                  </FontIcon>
+                  <Label text="Relatórios" textFill="WHITE">
+                     <font>
+                        <Font size="20.0" />
+                     </font>
+                     <HBox.margin>
+                        <Insets left="20.0" right="10.0" />
+                     </HBox.margin>
+                  </Label>
+               </children>
+               <styleClass>
+                  <String fx:value="dashboard_menu_item_border" />
+                  <String fx:value="dashboard_menu_item" />
+               </styleClass>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </HBox>
+            <Pane prefHeight="249.0" prefWidth="200.0" VBox.vgrow="ALWAYS" />
+            <HBox alignment="CENTER_LEFT" layoutX="10.0" layoutY="260.0" prefHeight="50.0" prefWidth="200.0">
+               <children>
+                  <FontIcon iconColor="WHITE" iconLiteral="mdi2e-exit-to-app" iconSize="30">
+                     <HBox.margin>
+                        <Insets left="20.0" right="10.0" />
+                     </HBox.margin>
+                  </FontIcon>
+                  <Label text="Sair" textFill="WHITE">
+                     <font>
+                        <Font size="20.0" />
+                     </font>
+                     <HBox.margin>
+                        <Insets left="20.0" right="10.0" />
+                     </HBox.margin>
+                  </Label>
+               </children>
+               <styleClass>
+                  <String fx:value="dashboard_menu_item_last" />
+                  <String fx:value="dashboard_menu_item" />
+               </styleClass>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </HBox>
+         </children>
+      </VBox>
+   </left>
 </BorderPane>
