@@ -11,6 +11,8 @@
 <?import javafx.scene.control.Menu?>
 <?import javafx.scene.control.MenuBar?>
 <?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.Pane?>
@@ -18,7 +20,7 @@
 <?import javafx.scene.text.Font?>
 <?import org.kordamp.ikonli.javafx.FontIcon?>
 
-<BorderPane prefHeight="700.0" prefWidth="1200.0" styleClass="bg_dashboard" stylesheets="@../assets/styles/stylesheet.css" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="CONTROLLER_NAME">
+<BorderPane prefHeight="800.0" prefWidth="1200.0" styleClass="bg_dashboard" stylesheets="@../assets/styles/stylesheet.css" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="br.com.almoxerifado.infra.javafx.controller.DashboardController">
    <top>
       <HBox alignment="CENTER_LEFT" nodeOrientation="LEFT_TO_RIGHT" prefHeight="60.0" prefWidth="200.0" style="-fx-background-color: #002333;" styleClass="dashboard_app_bar" BorderPane.alignment="CENTER">
          <children>
@@ -48,8 +50,8 @@
                 </Menu>
                 <Menu mnemonicParsing="false">
                   <items>
-                    <MenuItem mnemonicParsing="false" text="Menu Perfil" />
-                        <MenuItem mnemonicParsing="false" text="Alterar Senha" />
+                    <MenuItem mnemonicParsing="false" onAction="#handleMenuProfile" text="Menu Perfil" />
+                        <MenuItem mnemonicParsing="false" onAction="#handleMenuChangePassword" text="Alterar Senha" />
                   </items>
                      <graphic>
                         <FontIcon iconColor="WHITE" iconLiteral="mdi2a-account" iconSize="30" />
@@ -66,7 +68,7 @@
             <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
          </BorderPane.margin>
          <children>
-            <HBox alignment="CENTER_LEFT" prefHeight="50.0" prefWidth="200.0">
+            <HBox alignment="CENTER_LEFT" onMouseClicked="#handleMenuDashboard" prefHeight="50.0" prefWidth="200.0">
                <children>
                   <FontIcon iconColor="WHITE" iconLiteral="mdi2h-home" iconSize="30">
                      <HBox.margin>
@@ -90,7 +92,7 @@
                   <Cursor fx:constant="HAND" />
                </cursor>
             </HBox>
-            <HBox alignment="CENTER_LEFT" layoutX="10.0" layoutY="10.0" prefHeight="50.0" prefWidth="200.0">
+            <HBox alignment="CENTER_LEFT" layoutX="10.0" layoutY="10.0" onMouseClicked="#handleMenuMaterial" prefHeight="50.0" prefWidth="200.0">
                <children>
                   <FontIcon iconColor="WHITE" iconLiteral="mdi2p-package-variant-closed" iconSize="30">
                      <HBox.margin>
@@ -124,7 +126,7 @@
                         <Insets left="20.0" right="10.0" />
                      </HBox.margin>
                   </FontIcon>
-                  <Label text="Categoria" textFill="WHITE">
+                  <Label onMouseClicked="#handleMenuCategories" text="Categoria" textFill="WHITE">
                      <font>
                         <Font size="20.0" />
                      </font>
@@ -148,7 +150,7 @@
                         <Insets left="20.0" right="10.0" />
                      </HBox.margin>
                   </FontIcon>
-                  <Label text="Pedidos" textFill="WHITE">
+                  <Label onMouseClicked="#handleMenuOrder" text="Pedidos" textFill="WHITE">
                      <font>
                         <Font size="20.0" />
                      </font>
@@ -172,7 +174,7 @@
                         <Insets left="20.0" right="10.0" />
                      </HBox.margin>
                   </FontIcon>
-                  <Label text="Usuários" textFill="WHITE">
+                  <Label onMouseClicked="#handleMenuUsers" text="Usuários" textFill="WHITE">
                      <font>
                         <Font size="20.0" />
                      </font>
@@ -189,7 +191,7 @@
                   <Cursor fx:constant="HAND" />
                </cursor>
             </HBox>
-            <HBox alignment="CENTER_LEFT" layoutX="10.0" layoutY="210.0" prefHeight="50.0" prefWidth="200.0">
+            <HBox alignment="CENTER_LEFT" layoutX="10.0" layoutY="210.0" onMouseClicked="#handleMenuReports" prefHeight="50.0" prefWidth="200.0">
                <children>
                   <FontIcon iconColor="WHITE" iconLiteral="mdi2f-file-document" iconSize="30">
                      <HBox.margin>
@@ -214,7 +216,7 @@
                </cursor>
             </HBox>
             <Pane prefHeight="249.0" prefWidth="200.0" VBox.vgrow="ALWAYS" />
-            <HBox alignment="CENTER_LEFT" layoutX="10.0" layoutY="260.0" prefHeight="50.0" prefWidth="200.0">
+            <HBox alignment="CENTER_LEFT" layoutX="10.0" layoutY="260.0" onMouseClicked="#handleMenuExit" prefHeight="50.0" prefWidth="200.0">
                <children>
                   <FontIcon iconColor="WHITE" iconLiteral="mdi2e-exit-to-app" iconSize="30">
                      <HBox.margin>
@@ -348,6 +350,9 @@
                           </yAxis>
                         </LineChart>
                      </children>
+                     <padding>
+                        <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+                     </padding>
                   </VBox>
                   <VBox layoutX="10.0" layoutY="10.0" prefHeight="200.0" prefWidth="100.0" styleClass="container_style" HBox.hgrow="ALWAYS">
                      <children>
@@ -359,11 +364,37 @@
                               <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
                            </padding>
                         </Label>
-                        <PieChart />
+                        <PieChart styleClass="pie_chart" />
                      </children>
+                     <padding>
+                        <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+                     </padding>
                   </VBox>
                </children>
             </HBox>
+            <VBox prefHeight="200.0" prefWidth="100.0" styleClass="container_style" VBox.vgrow="ALWAYS">
+               <children>
+                  <Label styleClass="shadow" text="Ultimos Pedidos" textFill="WHITE">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                     <padding>
+                        <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                     </padding>
+                  </Label>
+                  <TableView prefHeight="200.0" prefWidth="200.0" styleClass="table_view" VBox.vgrow="ALWAYS">
+                    <columns>
+                      <TableColumn prefWidth="231.0" text="Material" />
+                      <TableColumn prefWidth="202.0" text="Tipo" />
+                        <TableColumn prefWidth="205.0" text="Quantidade" />
+                        <TableColumn prefWidth="227.0" text="data" />
+                    </columns>
+                  </TableView>
+               </children>
+               <padding>
+                  <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+               </padding>
+            </VBox>
          </children>
          <BorderPane.margin>
             <Insets bottom="20.0" right="20.0" top="20.0" />
