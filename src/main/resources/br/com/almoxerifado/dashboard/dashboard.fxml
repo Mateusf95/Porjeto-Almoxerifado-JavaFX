@@ -18,12 +18,17 @@
    <top>
       <HBox alignment="CENTER_LEFT" nodeOrientation="LEFT_TO_RIGHT" prefHeight="60.0" prefWidth="200.0" style="-fx-background-color: #002333;" styleClass="dashboard_app_bar" BorderPane.alignment="CENTER">
          <children>
+            <FontIcon iconColor="WHITE" iconLiteral="mdi2c-cube-scan" iconSize="40">
+               <HBox.margin>
+                  <Insets left="20.0" right="10.0" />
+               </HBox.margin>
+            </FontIcon>
             <Label contentDisplay="CENTER" text="ALMOXERIFADO" textFill="WHITE">
                <font>
                   <Font name="System Italic" size="18.0" />
                </font>
                <HBox.margin>
-                  <Insets left="20.0" right="20.0" />
+                  <Insets right="20.0" />
                </HBox.margin>
             </Label>
             <Pane prefHeight="200.0" prefWidth="200.0" HBox.hgrow="ALWAYS" />
@@ -232,4 +237,101 @@
          </children>
       </VBox>
    </left>
+   <center>
+      <VBox prefHeight="200.0" prefWidth="100.0" spacing="20.0" BorderPane.alignment="CENTER">
+         <children>
+            <HBox alignment="CENTER" prefHeight="150.0" prefWidth="200.0" styleClass="container_style">
+               <children>
+                  <VBox alignment="CENTER" prefHeight="200.0" prefWidth="150.0">
+                     <children>
+                        <Label text="Total de itens" textFill="WHITE">
+                           <font>
+                              <Font size="16.0" />
+                           </font>
+                        </Label>
+                        <FontIcon iconColor="WHITE" iconLiteral="mdi2f-format-list-checkbox" iconSize="30">
+                           <VBox.margin>
+                              <Insets bottom="10.0" top="10.0" />
+                           </VBox.margin>
+                        </FontIcon>
+                        <Label layoutX="37.0" layoutY="58.0" styleClass="shadow" text="24578" textFill="WHITE">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </VBox>
+                  <Pane maxHeight="100.0" prefHeight="100.0" prefWidth="2.0" style="-fx-background-color: rgba(255,255,255,0.3);" />
+                  <VBox alignment="CENTER" layoutX="389.0" layoutY="10.0" prefHeight="200.0" prefWidth="150.0">
+                     <children>
+                        <Label text="Itens Disponíveis" textFill="WHITE">
+                           <font>
+                              <Font size="16.0" />
+                           </font>
+                        </Label>
+                        <FontIcon iconColor="WHITE" iconLiteral="mdi2f-format-list-checks" iconSize="30">
+                           <VBox.margin>
+                              <Insets bottom="10.0" top="10.0" />
+                           </VBox.margin>
+                        </FontIcon>
+                        <Label layoutX="37.0" layoutY="58.0" styleClass="shadow" text="15478" textFill="WHITE">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </VBox>
+                  <Pane layoutX="539.0" layoutY="35.0" maxHeight="100.0" prefHeight="100.0" prefWidth="2.0" style="-fx-background-color: rgba(255,255,255,0.3);" />
+                  <VBox alignment="CENTER" layoutX="465.0" layoutY="10.0" prefHeight="200.0" prefWidth="150.0">
+                     <children>
+                        <Label text="Estoque Baixo" textFill="WHITE">
+                           <font>
+                              <Font size="16.0" />
+                           </font>
+                        </Label>
+                        <FontIcon iconColor="WHITE" iconLiteral="mdi2a-alarm-light-outline" iconSize="30">
+                           <VBox.margin>
+                              <Insets bottom="10.0" top="10.0" />
+                           </VBox.margin>
+                        </FontIcon>
+                        <Label layoutX="37.0" layoutY="58.0" styleClass="shadow" text="42" textFill="WHITE">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </VBox>
+                  <Pane layoutX="615.0" layoutY="35.0" maxHeight="100.0" prefHeight="100.0" prefWidth="2.0" style="-fx-background-color: rgba(255,255,255,0.3);" />
+                  <VBox alignment="CENTER" layoutX="541.0" layoutY="10.0" prefHeight="200.0" prefWidth="150.0">
+                     <children>
+                        <Label text="Pedidos Recentes" textFill="WHITE">
+                           <font>
+                              <Font size="16.0" />
+                           </font>
+                        </Label>
+                        <FontIcon iconColor="WHITE" iconLiteral="mdi2c-calendar-clock" iconSize="30">
+                           <VBox.margin>
+                              <Insets bottom="10.0" top="10.0" />
+                           </VBox.margin>
+                        </FontIcon>
+                        <Label layoutX="37.0" layoutY="58.0" styleClass="shadow" text="24578" textFill="WHITE">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </VBox>
+               </children>
+            </HBox>
+            <Label text="Continuar apartir do minuto 22:00, para continuar a edição desta tela! O video é a aula 11" textFill="WHITE">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+         </children>
+         <BorderPane.margin>
+            <Insets bottom="20.0" right="20.0" top="20.0" />
+         </BorderPane.margin>
+      </VBox>
+   </center>
 </BorderPane>
