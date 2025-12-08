@@ -3,6 +3,10 @@
 <?import java.lang.String?>
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.Cursor?>
+<?import javafx.scene.chart.CategoryAxis?>
+<?import javafx.scene.chart.LineChart?>
+<?import javafx.scene.chart.NumberAxis?>
+<?import javafx.scene.chart.PieChart?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.Menu?>
 <?import javafx.scene.control.MenuBar?>
@@ -323,11 +327,43 @@
                   </VBox>
                </children>
             </HBox>
-            <Label text="Continuar apartir do minuto 22:00, para continuar a edição desta tela! O video é a aula 11" textFill="WHITE">
-               <font>
-                  <Font size="18.0" />
-               </font>
-            </Label>
+            <HBox prefHeight="250.0" prefWidth="200.0" spacing="20.0">
+               <children>
+                  <VBox prefHeight="200.0" prefWidth="100.0" styleClass="container_style" HBox.hgrow="ALWAYS">
+                     <children>
+                        <Label styleClass="shadow" text="Movimentos da Semana" textFill="WHITE">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                           <padding>
+                              <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                           </padding>
+                        </Label>
+                        <LineChart styleClass="line_chart">
+                          <xAxis>
+                            <CategoryAxis side="BOTTOM" />
+                          </xAxis>
+                          <yAxis>
+                            <NumberAxis side="LEFT" />
+                          </yAxis>
+                        </LineChart>
+                     </children>
+                  </VBox>
+                  <VBox layoutX="10.0" layoutY="10.0" prefHeight="200.0" prefWidth="100.0" styleClass="container_style" HBox.hgrow="ALWAYS">
+                     <children>
+                        <Label styleClass="shadow" text="Pedidos por Categoria" textFill="WHITE">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                           <padding>
+                              <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                           </padding>
+                        </Label>
+                        <PieChart />
+                     </children>
+                  </VBox>
+               </children>
+            </HBox>
          </children>
          <BorderPane.margin>
             <Insets bottom="20.0" right="20.0" top="20.0" />
