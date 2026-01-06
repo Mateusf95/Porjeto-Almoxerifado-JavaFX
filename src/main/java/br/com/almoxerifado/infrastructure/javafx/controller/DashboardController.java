@@ -1,4 +1,4 @@
-package br.com.almoxerifado.infra.javafx.controller;
+package br.com.almoxerifado.infrastructure.javafx.controller;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
