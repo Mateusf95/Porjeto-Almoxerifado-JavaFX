@@ -14,7 +14,7 @@ target/
 *.ipr
 .idea
 .gitignore
-
+*.db
 
 ### Eclipse ###
 .apt_generated
