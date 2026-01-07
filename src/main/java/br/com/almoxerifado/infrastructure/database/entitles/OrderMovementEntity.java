@@ -10,7 +10,7 @@ import java.time.LocalDateTime;
 @Table(name = "ORDER_MOVEMENT")
 @AllArgsConstructor
 @Data
-public class OrderMovement {
+public class OrderMovementEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -29,5 +29,5 @@ public class OrderMovement {
 
     @ManyToOne
     @JoinColumn(name = "STOREKEEPER", referencedColumnName = "ID", nullable = false)
-    private OrderEntity storeKeeper;
+    private UserEntity storeKeeper;
 }
