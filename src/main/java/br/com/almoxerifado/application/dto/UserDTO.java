@@ -4,8 +4,8 @@ import java.time.LocalDateTime;
 
 public record UserDTO(
         Long id,
+        String name,
         String email,
-        String password,
         String cpf,
         String register,
         LocalDateTime createdAt,

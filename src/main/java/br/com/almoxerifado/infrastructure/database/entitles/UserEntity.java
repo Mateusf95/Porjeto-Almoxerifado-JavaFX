@@ -35,5 +35,5 @@ public class UserEntity {
     private String register;
 
     @Column(name = "CREATED_AT")
-    private LocalDateTime createdAt;
+    private LocalDateTime createdAt = LocalDateTime.now();
 }
